@@ -13,7 +13,7 @@ class App extends React.Component {
     );
   }
 
-  render() {
+  renderContent() {
     if (this.state.errorMesaage && !this.state.lat) {
       return <div>Error: {this.state.errorMesaage}</div>;
     }
@@ -23,6 +23,10 @@ class App extends React.Component {
     }
 
     return <Spinner message="waiting on loaction..." />;
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>;
   }
 }
 
